@@ -134,7 +134,15 @@ from Month_name
 group by MonthName
 order by percentage desc; 
 
+/* 8. Find the percentage of single artists that have collaborated in the 2023. */
 
+
+select artist_count,
+count(*) * 100/sum(count(*)) over(partition by released_year) as Percent
+from Spotify_streams
+where released_year = 2023
+group by artist_count
+order by Percent desc;
 
 
 select *
