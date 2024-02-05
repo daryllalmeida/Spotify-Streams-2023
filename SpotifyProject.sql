@@ -41,6 +41,18 @@ from Spotify_streams
 order by streams desc, track_name;
 
 
+/* Finding the min and max streams in 2023. */
+
+select min(streams) as Minimum_Streams,
+max(streams) as Maximum_streams
+from Spotify_streams;
+
+/* Counting the records that are not null */
+
+select count(*) 
+from Spotify_streams
+where track_name is not null;
+
 /* 1. Finding the highest party rated songs based on danceability. Write a query to find the top 10 songs that are most used for dancing. */
 
 select *
